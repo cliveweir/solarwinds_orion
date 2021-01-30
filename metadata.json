@@ -1,0 +1,29 @@
+{
+  "name": "solarwinds",
+  "version": "0.1.0",
+  "author": "Clive Weir",
+  "summary": "Module to manage the SolarWinds Orion Platform on Windows.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/cliveweir/solarwinds",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "windows",
+      "operatingsystemrelease": [
+        "2019",
+        "10"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.0 < 7.0.0"
+    }
+  ],
+  "pdk-version": "1.18.0",
+  "template-url": "https://github.com/puppetlabs/pdk-templates#1.18.0",
+  "template-ref": "tags/1.18.0-0-g095317c"
+}
