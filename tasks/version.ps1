@@ -1,6 +1,6 @@
 <#
 .Synopsis
-This script checks if SolarWinds Orion is installed and reports the version & hotfix version.
+This script detects the version of the SolarWinds Orion Platform and returns the version & hotfix version.
 .Description
 The version & hotfix version are parsed from the footer of the Orion login page as recommended here:
 https://support.solarwinds.com/SuccessCenter/s/article/Determine-which-version-of-a-SolarWinds-Orion-product-I-have-installed?language=en_US
@@ -12,13 +12,6 @@ Output is JSON format:
   "hotfix"	: Number (Detected SolarWinds Orion hotfix, 0 means none was detected)
 }
 #>
-
-Function IsVulnerable {
-	Param ([string]$version, [int]$hotfix)
-	($version -eq ("2019.4") -and $hotfix -eq 5) -or
-	(($version -eq ("2020.2") -or $version -eq ("2020.2.1")) -and $hotfix -le 1)
-	#?
-}
 
 Function CreateResult {
 	Param ([string]$action, [string]$message, [string]$version, [int]$hotfix)
@@ -59,13 +52,6 @@ Function ParseFooterText {
 		CreateResult -message "SolarWinds Orion $version (no hotfix) detected" -version $version -hotfix $hotfix
 	}
 }
-#ParseFooterText -footerText "Orion Platform HF5, NCM HF1, NPM: 2019.4 © 1999-2020 SolarWinds Worldwide, LLC. All Rights Reserved."
-#ParseFooterText -footerText "Orion Platform HF6, NCM HF1, NPM: 2019.4 © 1999-2020 SolarWinds Worldwide, LLC. All Rights Reserved."
-#ParseFooterText -footerText "Orion Platform HF2, NPM, NTA HF2: 2020.2.1 © 1999-2021 SolarWinds Worldwide, LLC. All Rights Reserved."
-#ParseFooterText -footerText "Orion Platform HF1, IPAN, NPM, NTA HF2, VMAN, SAM HF1: 2020.2.1 © 1999-2020 SolarWinds Worldwide, LLC. All Rights Reserved."
-#ParseFooterText -footerText "Orion Platform, NPM, NTA: 2020.2.4 © 1999-2021 SolarWinds Worldwide, LLC. All Rights Reserved."
-#ParseFooterText -footerText "Orion Platform 2018.2 HF6, CloudMonitoring 2.0.1, NetPath 1.1.3, NPM 12.3, NTA 4.4.0 © 1999-2019 SolarWinds Worldwide, LLC. All Rights Reserved."
-#ParseFooterText -footerText "Something completely different."
 
 # Check for Orion services
 try {

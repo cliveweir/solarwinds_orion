@@ -1,25 +1,36 @@
 # solarwinds_orion module
 
-## Table of Contents
+#### Table of Contents
+
 1. [Description](#description)
 2. [Setup](#setup)
-3. [Tasks](#tasks)
-    * [solarwinds_orion::version](#version)
+3. [Usage](#usage)
+4. [Limitations](#limitations)
+5. [Reference](#reference)
+6. [Development](#development)
 
 ## Description
-This module delivers tasks for detection and remediation of known vulnerabilities.
+
+Puppet module for the managing the SolarWinds Orion Platform.
 
 ## Setup
-Install the remediation module with <pre>puppet module install solarwinds_orion</pre>
 
-## Tasks
-### version
-<pre>solarwinds_orion::version</pre>
-#### Description
-Checks if the SolarWinds Orion Platform is installed and reports the version and hotfix version.
-#### Usage
-Note this task uses powershell and is only applicable to Windows targets.
+## Usage
+
+This module contains a single task for detecting the version of the Orion platform.
+
+## Limitations
+
+This module uses powershell and therefore only runs on Windows.
+
+## Reference
+
+### `solarwinds_orion::version`
+
+Detects if the SolarWinds Orion Platform is installed and reports the version and hotfix version.
+
 #### Output
+
 Not installed:
 <pre>
 {
@@ -28,6 +39,7 @@ Not installed:
     "hotfix": 0
 }
 </pre>
+
 Installed and version detected successfully:
 <pre>
 {
@@ -42,6 +54,7 @@ or:
   "hotfix": 0
 }
 </pre>
+
 Installed and version not detected:
 <pre>
 {
@@ -50,6 +63,7 @@ Installed and version not detected:
   "hotfix": 0
 }
 </pre>
+
 Installed and version partially detected:
 <pre>
 {
@@ -58,3 +72,7 @@ Installed and version partially detected:
   "hotfix": 0
 }
 </pre>
+
+## Development
+
+TBD.

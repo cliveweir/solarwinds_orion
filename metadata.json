@@ -1,8 +1,8 @@
 {
-  "name": "solarwinds",
+  "name": "solarwinds_orion",
   "version": "0.1.0",
   "author": "Clive Weir",
-  "summary": "Module to manage the SolarWinds Orion Platform on Windows.",
+  "summary": "Puppet module for the managing the SolarWinds Orion Platform.",
   "license": "Apache-2.0",
   "source": "https://github.com/cliveweir/solarwinds",
   "dependencies": [

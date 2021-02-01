@@ -1,7 +1,7 @@
 {
   "puppet_task_version": 1,
   "supports_noop": false,
-  "description": "Detect the version of the SolarWinds Orion Platform",
+  "description": "Detects the version of the SolarWinds Orion Platform",
   "parameters": {
   }
 }
